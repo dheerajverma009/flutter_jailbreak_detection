@@ -29,14 +29,25 @@ android {
     compileSdk 36
     namespace project.group
 
+    // compileOptions {
+    //     sourceCompatibility JavaVersion.VERSION_17
+    //     targetCompatibility JavaVersion.VERSION_17
+    // }
+
+    // sourceSets {
+    //     main.java.srcDirs += 'src/main/kotlin'
+    // }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
+    
     defaultConfig {
         minSdk 24
     }
